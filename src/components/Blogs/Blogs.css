@@ -1,0 +1,98 @@
+* {
+    padding: 0px;
+    border: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.pending{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.b-outer-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.b-inside-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: #181a1b;
+}
+
+.left-container {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* align-items: center; */
+}
+
+.right-container {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    /* color: rgb(38, 253, 253); */
+    color: rgb(224, 224, 224);
+    align-items: center;
+    background-color: rgb(24, 23, 24);
+    overflow-y: scroll;
+}
+
+
+.website-title {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-self: center;
+    justify-content: flex-start;
+    color: rgb(40, 48, 44);
+    font-family: 'Goldman', cursive;
+    margin-top: 7vh;
+}
+
+.blog-container {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    /* padding-bottom: 2vh; */
+}
+
+.logo {
+    width: 9vw;
+    height: 5vw;
+    min-width: 70px;
+    min-height: 45px;
+    background-image: url(../../images/hacking-maniac.gif);
+    background-position: left;
+    background-size: cover;
+    margin-left: 0px
+}
+
+.nav-button {
+    width: 90%;
+    display: flex;
+    justify-content: flex-end;
+    margin-left: auto;
+}
+
+.button {
+    width: 10vw;
+    height: 7vh;
+    min-width: fit-content;
+    background-color: rgb(38, 253, 253);
+}
+

@@ -6,12 +6,19 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
+    "firebase": "^7.24.0",
+    "mkcert": "^1.4.0",
     "react": "^17.0.0",
+    "react-dock": "^0.3.0",
     "react-dom": "^17.0.0",
+    "react-hook-form": "^6.11.0",
+    "react-markdown": "^5.0.2",
+    "react-responsive": "^8.1.1",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "set HTTPS=true&&react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

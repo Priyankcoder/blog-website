@@ -1,0 +1,47 @@
+* {
+    padding: 0px;
+    border: 0px;
+    box-sizing: border-box;
+}
+
+.profile {
+    width: 100%;
+    display: flex;
+    /* background-color: #5fcb71; */
+    background-color: rgb(22, 22, 22);
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    align-items: center;
+    color: rgb(53, 226, 226);
+
+}
+
+.author-image {
+    /* width: 20%; */
+    width: 15vw;
+    height: 15vw ;
+    border: 1px solid rgb(53, 226, 226);
+    border-radius: 50% 50%;
+    overflow: hidden;
+    background-image: url("../../images/prof.jpeg");
+    background-position: center;
+    background-size: contain;
+}
+.author-name {
+    width: 100%;
+    text-align: center;
+    font-family: 'Goldman', cursive;
+}
+
+.social-media {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5vh;
+}
+
+.author-intro {
+    width: 70%;
+    text-align: center;
+}

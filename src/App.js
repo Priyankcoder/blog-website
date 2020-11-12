@@ -1,25 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import React, { useEffect, useState } from "react";
+import logo from "./logo.svg";
+import { fire } from "../src/firebase";
+import Contacts from "./components/Contacts";
+import Blogs from "./components/Blogs/Blogs";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Login from "./components/Login";
+import { AuthProvider } from "./Auth";
+import PrivateRoute from "./PrivateRoute";
+import Formatter from './components/Formatter/Formatter'
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AuthProvider>
+      <Router>
+        <div>
+          <Route path="/" exact component={Blogs} />
+          <PrivateRoute exact path="/dashboard" component={Contacts} />
+          <Route path="/login" exact component={Login} />
+          <Route path="/blog/:key" exact component={Formatter} />
+          <div className="footer">Made by Priyank 🦅</div>
+        </div>
+      </Router>
+    </AuthProvider>
   );
 }
 
