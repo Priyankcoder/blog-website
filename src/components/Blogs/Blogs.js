@@ -16,7 +16,7 @@ const Blogs = () => {
   return (
     <div className="b-outer-container">
       <div className="b-inside-container">
-        <MediaQuery minWidth={900}>
+        <MediaQuery minWidth={1025}>
           <div className="left-container">
             <Profile></Profile>
           </div>

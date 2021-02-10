@@ -3,25 +3,35 @@ import { fire } from "../firebase";
 import { useForm } from "react-hook-form";
 import { UserContext } from "../userContext";
 import { AuthContext } from "../Auth.js";
-import { withRouter, Redirect } from "react-router";
-const Login = ({ history }) => {
+import { Redirect } from "react-router";
+import loadimg from '../images/loadimg.svg'
+const Login = () => {
+  const [loading, setLoading] = useState(false);
   const handleLogin = useCallback(
     async (data) => {
-      console.log(data);
+      // console.log(data);
+      setLoading(true)
       const { email, password } = data;
       try {
         await fire.auth().signInWithEmailAndPassword(email, password);
-        history.push("/dashboard");
+        setLoading(false);
       } catch (error) {
+        setLoading(false);
         alert(error);
       }
-    },
-    [history]
+    }
   );
   const { currentUser } = useContext(AuthContext);
   const { register, handleSubmit, errors } = useForm();
   if (currentUser) {
     return <Redirect to="/" />;
+  }
+  if (loading) {
+    return (
+      <div className="pending">
+        <img src={loadimg} alt="loading-image" />
+      </div>
+    );
   }
   return (
     <form onSubmit={handleSubmit(handleLogin)} style={{display: "flex", width: "70vw", height: "270px", flexDirection: "column", marginLeft: "auto", marginRight: "auto", marginTop: "20vh", justifyContent: "space-between"}}>
@@ -46,7 +56,7 @@ const Login = ({ history }) => {
         </label>
         <div className="col-sm-10">
           <input
-            type="text"
+            type="password"
             class="form-control"
             id="password"
             name="password"
